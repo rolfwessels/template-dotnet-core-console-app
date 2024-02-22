@@ -98,11 +98,11 @@ version:
 	@echo '{ "version": "${version}" }' > src/version.json
 
 
-start: docker-check
+start: 
 	@echo -e "Starting the $(release) release of $(project)"
 	@cd src/TemplateDotnetCoreConsoleApp.Cmd; dotnet run -- --help
 
-test: docker-check
+test: 
 	@echo -e "Testing ${GREEN}v${version}${NC}"
 	@dotnet test TemplateDotnetCoreConsoleApp.sln --logger:trx --results-directory ../TestResults \
 		 /p:CollectCoverage=true \
@@ -111,7 +111,7 @@ test: docker-check
 		 /p:Exclude="[*.Tests]*" \
 		 /p:CoverletOutputFormat="lcov"
 
-publish: docker-check
+publish: 
 	@echo -e "Building the ${GREEN}v${version}${NC}-$(release) release of $(project)"
 		
 	@dotnet publish src/TemplateDotnetCoreConsoleApp.Cmd/TemplateDotnetCoreConsoleApp.Cmd.csproj -r linux-x64 -c $(release) \
