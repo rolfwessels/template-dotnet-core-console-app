@@ -1,7 +1,7 @@
-[![Github release](https://img.shields.io/github/v/release/rolfwessels/TemplateDotnetCoreConsoleApp)](https://github.com/rolfwessels/TemplateDotnetCoreConsoleApp/releases)
-[![Dockerhub Status](https://img.shields.io/badge/dockerhub-ok-blue.svg)](https://hub.docker.com/r/rolfwessels/TemplateDotnetCoreConsoleApp/tags)
-[![Dockerhub Version](https://img.shields.io/docker/v/rolfwessels/TemplateDotnetCoreConsoleApp?sort=semver)](https://hub.docker.com/r/rolfwessels/TemplateDotnetCoreConsoleApp/tags)
-[![GitHub](https://img.shields.io/github/license/rolfwessels/TemplateDotnetCoreConsoleApp)](https://github.com/rolfwessels/TemplateDotnetCoreConsoleApp/licence.md)
+[![Github release](https://img.shields.io/github/v/release/rolfwessels/template-dotnet-core-console-app)](https://github.com/rolfwessels/template-dotnet-core-console-app/releases)
+[![Dockerhub Status](https://img.shields.io/badge/dockerhub-ok-blue.svg)](https://hub.docker.com/r/rolfwessels/template-dotnet-core-console-app/tags)
+[![Dockerhub Version](https://img.shields.io/docker/v/rolfwessels/template-dotnet-core-console-app?sort=semver)](https://hub.docker.com/r/rolfwessels/template-dotnet-core-console-app/tags)
+[![GitHub](https://img.shields.io/github/license/rolfwessels/template-dotnet-core-console-app)](https://github.com/rolfwessels/template-dotnet-core-console-app/licence.md)
 
 
 ![Template template dotnet core console app](./docs/logo.png)
