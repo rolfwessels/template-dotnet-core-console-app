@@ -14,6 +14,8 @@ public class DefaultCommandTests
     var executeAsync = await defaultCommandTests.ExecuteAsync(null!, new DefaultCommand.Settings());
     // assert
     executeAsync.Should().Be(1);
+    
+
   }
 
   [Test]

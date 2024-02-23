@@ -2,7 +2,7 @@
 
 # General Variables
 date=$(shell date +'%y.%m.%d.%H.%M')
-project := Template template dotnet core console app
+project := Template dotnet core console app
 container := dev
 docker-file-check := /.dockerenv
 docker-warning := ""
