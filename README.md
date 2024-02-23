@@ -4,11 +4,22 @@
 [![GitHub](https://img.shields.io/github/license/rolfwessels/template-dotnet-core-console-app)](https://github.com/rolfwessels/template-dotnet-core-console-app/licence.md)
 
 
-![Template template dotnet core console app](./docs/logo.png)
+![Template dotnet core console app](./docs/logo.png)
 
-# 🌐 Template template dotnet core console app
+# 🌐 Template dotnet core console app
 
 This makes template dotnet core console app happen
+
+## 📦 Technology
+
+* [Serilog](https://serilog.net/) for logging and all the extensibility including plugins to push to [loki](https://grafana.com/oss/loki/)
+* [Spectre.Console](https://spectreconsole.net/) for amazing interactive console applications.
+* [NUnit](https://nunit.org/) for unit tests
+* [FluentAssertions](https://fluentassertions.com/) for readable assertions
+* [Docker](https://www.docker.com/)  for easy deployment and setting up of developer environment
+* [MakeFile](https://opensource.com/article/18/8/what-how-makefile)  because it just works!
+
+
 
 ## 🚀 Getting started
 
@@ -28,7 +39,7 @@ make publish
 To deploy a docker image you can use the following commands
 
 ```bash
-# log into docker
+# Build docker images and push to repository
 make docker-build docker-login docker-push 
 # or just
 make docker-publish
@@ -54,16 +65,16 @@ Before you begin, ensure you have met the following requirements:
 
 ### 🐳 Commands to run inside the container
 
-- `start` : Run the Template template dotnet core console app
-- `test` : Test the Template template dotnet core console app
-- `publish` : Publish the Template template dotnet core console app
+- `start` : Run the Template dotnet core console app
+- `test` : Test the Template dotnet core console app
+- `publish` : Publish the Template dotnet core console app
 - `docker-login` : Login to docker registry
 - `docker-build` : Build the docker image
 - `docker-push` : Push the docker image
 - `docker-pull-short-tag` : Pull the docker image based in git short hash
 - `docker-tag-env` : Tag the docker image based in the environment
 - `docker-publish` : Publish the docker image
-- `deploy` : Deploy the Template template dotnet core console app
+- `deploy` : Deploy the Template dotnet core console app
 - `update-packages` : Update the packages`
 
 ## 💻 Development
@@ -71,11 +82,11 @@ Before you begin, ensure you have met the following requirements:
 ### ➕ Add a project
 
 ```
-dotnet new classlib -n ProveIngestion.Api.Common -o ./src/ProveIngestion.Api.Common
-dotnet new nunit -n ProveIngestion.Api.Common.Tests -o ./tests/ProveIngestion.Api.Common.Tests
-dotnet sln  ProveIngestion.Cmd.sln add ./src/ProveIngestion.Api.Common/ProveIngestion.Api.Common.csproj
-dotnet sln  ProveIngestion.Cmd.sln add ./tests/ProveIngestion.Api.Common.Tests/ProveIngestion.Api.Common.Tests.csproj
-dotnet sln  ProveIngestion.Cmd.sln list
+dotnet new classlib -n TemplateDotnetCoreConsoleApp.Core -o ./src/TemplateDotnetCoreConsoleApp.Core
+dotnet new nunit -n TemplateDotnetCoreConsoleApp.Core.Tests -o ./tests/TemplateDotnetCoreConsoleApp.Core.Tests
+dotnet sln TemplateDotnetCoreConsoleApp.sln add ./src/TemplateDotnetCoreConsoleApp.Core/TemplateDotnetCoreConsoleApp.Core.csproj
+dotnet sln TemplateDotnetCoreConsoleApp.sln add ./tests/TemplateDotnetCoreConsoleApp.Core.Tests/TemplateDotnetCoreConsoleApp.Core.Tests.csproj
+dotnet sln TemplateDotnetCoreConsoleApp.sln list
 ```
 
 ### 🔄 Versioning
