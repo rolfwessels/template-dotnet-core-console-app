@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    if: contains('refs/heads/main', github.ref)
+    if: "!contains(github.ref, 'refs/tags/v')"
     runs-on: ubuntu-latest
     env:
       RedisHost: localhost
@@ -28,7 +28,6 @@ jobs:
       - name: execute console to see if it runs
         run: make start
   publish-dev:
-    if: contains('refs/heads/main', github.ref)
     needs: test
     runs-on: ubuntu-latest
     env:
@@ -45,7 +44,8 @@ jobs:
         run: make publish
       - name: Build Docker image
         run: make docker-build
-      - name: Push images
+      - name: Push images to Docker Hub
+        if: github.ref == 'refs/heads/main' || startsWith(github.event.head_commit.message, 'deploy')
         run: make #docker-login docker-push deploy env=dev
   publish-prod:
     if: contains(github.ref, 'refs/tags/v')
