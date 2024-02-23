@@ -33,7 +33,7 @@ ifeq ($(current-branch), main)
 	docker-tags := -t $(dockerhub):alpha -t $(dockerhub):latest -t $(dockerhub):v$(version) -t $(dockerhub):$(git-short-hash)
 	version-full := $(version)
 else
-	version := $(versionPrefix).$(shell git rev-list main --count).$(shell git rev-list main..HEAD --count)
+	version := $(versionPrefix).$(shell git rev-list origin/main --count).$(shell git rev-list origin/main..HEAD --count)
 	version-suffix := alpha
 	version-full := $(version)-$(version-suffix)
 	docker-tags := -t $(dockerhub):$(version-suffix) -t $(dockerhub):$(git-short-hash) -t $(dockerhub):v$(version-full)
@@ -98,11 +98,11 @@ version:
 	@echo '{ "version": "${version}" }' > src/version.json
 
 
-start: docker-check
+start: 
 	@echo -e "Starting the $(release) release of $(project)"
 	@cd src/TemplateDotnetCoreConsoleApp.Cmd; dotnet run -- --help
 
-test: docker-check
+test: 
 	@echo -e "Testing ${GREEN}v${version}${NC}"
 	@dotnet test TemplateDotnetCoreConsoleApp.sln --logger:trx --results-directory ../TestResults \
 		 /p:CollectCoverage=true \
@@ -111,7 +111,7 @@ test: docker-check
 		 /p:Exclude="[*.Tests]*" \
 		 /p:CoverletOutputFormat="lcov"
 
-publish: docker-check
+publish: 
 	@echo -e "Building the ${GREEN}v${version}${NC}-$(release) release of $(project)"
 		
 	@dotnet publish src/TemplateDotnetCoreConsoleApp.Cmd/TemplateDotnetCoreConsoleApp.Cmd.csproj -r linux-x64 -c $(release) \
