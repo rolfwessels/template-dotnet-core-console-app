@@ -20,7 +20,7 @@ internal class Program
     app.Configure(config =>
     {
       config.SetApplicationName("TemplateDotnetCoreConsoleApp");
-      config.SetExceptionHandler(e =>
+      config.SetExceptionHandler((e, _) =>
       {
         Log.Logger.Error(e, e.Message);
         AnsiConsole.MarkupLine($"[red]Error:[/]{Markup.Escape(e.Message)}");

@@ -1,4 +1,4 @@
-using FluentAssertions;
+using AwesomeAssertions;
 using NUnit.Framework;
 
 namespace TemplateDotnetCoreConsoleApp.Cmd.Tests;
@@ -11,7 +11,7 @@ public class DefaultCommandTests
     // arrange
     var defaultCommandTests = new DefaultCommand();
     // action
-    var executeAsync = await defaultCommandTests.ExecuteAsync(null!, new DefaultCommand.Settings());
+    var executeAsync = await defaultCommandTests.ExecuteAsync(null!, new DefaultCommand.Settings(), CancellationToken.None);
     // assert
     executeAsync.Should().Be(1);
     
@@ -25,7 +25,7 @@ public class DefaultCommandTests
     var defaultCommandTests = new DefaultCommand();
     // action
     var executeAsync =
-      await defaultCommandTests.ExecuteAsync(null!, new DefaultCommand.Settings() { Name = "Hi", Table = true });
+      await defaultCommandTests.ExecuteAsync(null!, new DefaultCommand.Settings() { Name = "Hi", Table = true }, CancellationToken.None);
     // assert
     executeAsync.Should().Be(0);
   }

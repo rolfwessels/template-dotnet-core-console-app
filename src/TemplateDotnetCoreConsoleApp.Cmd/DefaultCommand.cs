@@ -26,7 +26,7 @@ public sealed class DefaultCommand : AsyncCommand<DefaultCommand.Settings>
   }
 
 
-  public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
+  public override async Task<int> ExecuteAsync(CommandContext context, Settings settings, CancellationToken cancellationToken)
   {
     if (settings.Name == null)
     {
