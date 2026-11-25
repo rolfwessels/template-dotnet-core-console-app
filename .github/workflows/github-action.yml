@@ -26,7 +26,7 @@ jobs:
       - name: Test
         run: make test
       - name: Audit dependencies for known vulnerabilities
-        run: dotnet restore TemplateDotnetCoreConsoleApp.sln --force-evaluate -p:AuditPipeline=true
+        run: make scan
       - name: execute console to see if it runs
         run: make start
   publish-dev:

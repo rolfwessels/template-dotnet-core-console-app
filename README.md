@@ -30,6 +30,8 @@ The dev shell shows a 🐳 prompt and saves Zsh history in a project volume acro
 | --- | --- |
 | `make start` | Display the CLI help. |
 | `make test` | Run the solution's tests with coverage. |
+| `make scan` | Audit direct and transitive NuGet dependencies. |
+| `make verify` | Run tests and the dependency audit. |
 | `make build up` | Build the development container and open its shell. |
 | `make down` | Stop the development container from the host. |
 
