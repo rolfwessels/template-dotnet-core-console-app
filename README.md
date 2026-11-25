@@ -22,6 +22,8 @@ dotnet run --project src/TemplateDotnetCoreConsoleApp.Cmd -- default sample
 
 The first command displays CLI help. The second prints `Processing sample..` and exits successfully.
 
+The dev shell shows a 🐳 prompt and saves Zsh history in a project volume across `make down` and rebuilds.
+
 ## 📋 Make commands
 
 | Command | Purpose |
@@ -42,7 +44,7 @@ To extend the solution with a library and its own tests, create the projects wit
 ## 📦 Releases and deployment
 
 - `make publish` writes self-contained Linux and Windows x64 builds under `dist/`.
-- `make docker-build` builds the application image. Use `make docker-publish` to build and push after configuring your registry.
+- The root `Dockerfile` contains both stages. `make build` builds the `dev` stage and `make docker-build` builds the `runtime` stage. Use `make docker-publish` to build and push after configuring your registry.
 - Set the major and minor version with `versionPrefix` in the Makefile. The patch comes from the Git commit count. `make version` writes the current version to `src/version.json`.
 - Create release tags such as `v1.2.0` on `main`. For an urgent fix to an older release, branch from its tag and merge the fix back into `main`.
 
